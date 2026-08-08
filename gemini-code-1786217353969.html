@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create, Collaborate, Stream</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- App Container -->
+  <div class="app-shell">
+
+    <!-- 2. Main Feed Header -->
+    <header class="main-header">
+      <div class="brand-dropdown">
+        <span class="logo-text">Pulse</span>
+        <button id="feedFilterBtn" class="icon-btn-text" aria-label="Filter Feed">
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div id="filterDropdown" class="dropdown-menu hidden">
+          <button data-filter="Following"><i class="fa-solid fa-user-group"></i> Following</button>
+          <button data-filter="Favorites"><i class="fa-solid fa-star"></i> Favorites</button>
+          <button data-filter="Jam Sessions"><i class="fa-solid fa-headphones"></i> Jam Sessions</button>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+        <button class="icon-btn" id="dmBtn" aria-label="Direct Messages">
+          <i class="fa-regular fa-paper-plane"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Scrollable Area -->
+    <main class="content-scroll">
+
+      <!-- 4. Story / Live Stage Carousel -->
+      <section class="stories-container">
+        <div class="story-item create-story" id="userStoryBtn">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/100/100?random=1" alt="Your Avatar" class="avatar" />
+            <span class="plus-badge">+</span>
+          </div>
+          <span class="story-username">Your Stage</span>
+        </div>
+        
+        <div class="story-item live" data-streamer="dj_synth">
+          <div class="story-avatar-wrapper live-border">
+            <img src="https://picsum.photos/100/100?random=2" alt="Streamer" class="avatar" />
+            <span class="live-badge">LIVE</span>
+          </div>
+          <span class="story-username">dj_synth</span>
+        </div>
+
+        <div class="story-item" data-streamer="gamer_zone">
+          <div class="story-avatar-wrapper active-border">
+            <img src="https://picsum.photos/100/100?random=3" alt="Streamer" class="avatar" />
+          </div>
+          <span class="story-username">gamer_zone</span>
+        </div>
+      </section>
+
+      <!-- 3. Feed Post Container -->
+      <article class="feed-post">
+        <header class="post-header">
+          <div class="post-user-info">
+            <img src="https://picsum.photos/100/100?random=4" alt="Creator" class="avatar-sm" />
+            <div>
+              <strong class="username">beatmaker_99</strong>
+              <span class="post-tag">Collaborative Track</span>
+            </div>
+          </div>
+          <button class="icon-btn post-options-btn" aria-label="Options">
+            <i class="fa-solid fa-ellipsis"></i>
+          </button>
+        </header>
+
+        <div class="post-media-container">
+          <img src="https://picsum.photos/600/600?random=10" alt="Post Content" class="post-media" />
+          <div class="audio-overlay-badge">
+            <i class="fa-solid fa-music"></i> Synthwave Jam Stem #4
+          </div>
+        </div>
+
+        <!-- Content Post Controls -->
+        <section class="post-controls">
+          <div class="left-controls">
+            <button class="icon-btn action-like" aria-label="Like">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button class="icon-btn action-comment" aria-label="Comment">
+              <i class="fa-regular fa-comment"></i>
+            </button>
+            <button class="icon-btn action-share" aria-label="Share">
+              <i class="fa-regular fa-paper-plane"></i>
+            </button>
+          </div>
+          <button class="icon-btn action-save" aria-label="Save">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+        </section>
+
+        <div class="post-details">
+          <span class="likes-count">1,240 likes</span>
+          <p class="caption">
+            <strong>beatmaker_99</strong> Working on a new synthwave track! Open stems available for anyone who wants to drop a gaming voiceover or bassline. 🎧🎮
+          </p>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- 1. Primary Navigation Bar (Bottom Dock) -->
+    <nav class="bottom-dock">
+      <button class="dock-btn active" id="dockHome" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </button>
+      <button class="dock-btn" id="dockExplore" aria-label="Explore">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="dock-btn create-btn" id="dockCreate" aria-label="Create / Stream">
+        <i class="fa-regular fa-square-plus"></i>
+      </button>
+      <button class="dock-btn" id="dockReels" aria-label="Streams & Reels">
+        <i class="fa-solid fa-clapperboard"></i>
+      </button>
+      <button class="dock-btn" id="dockProfile" aria-label="Profile">
+        <img src="https://picsum.photos/100/100?random=1" alt="Profile" class="profile-dock-avatar" />
+      </button>
+    </nav>
+
+    <!-- Modal overlay for options & comments -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+      <div class="modal-content">
+        <button id="closeModal" class="close-btn">&times;</button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
